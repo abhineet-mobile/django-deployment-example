@@ -1,0 +1,33 @@
+{% extends 'users_pass_app/base.html' %}
+{% block body_block%}
+
+<div class="jumbotron">
+  {% if registered %}
+
+  <h1>Thank you fro registration </h1>
+
+
+  {% else%}
+  <p>Fill out the registration form below</p>
+  <h1> Registration form </h1>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{UserForm.as_p}}
+    {{UserProfileData.as_p}}
+    <input type="submit" name="" value="Submit">
+  </form>
+
+
+
+
+  {% endif %}
+
+
+
+</div>
+
+
+
+
+
+{%endblock%}
